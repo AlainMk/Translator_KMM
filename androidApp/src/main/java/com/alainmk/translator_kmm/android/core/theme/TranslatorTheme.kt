@@ -1,4 +1,4 @@
-package com.alainmk.translator_kmm.android
+package com.alainmk.translator_kmm.android.core.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,8 +12,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.alainmk.translator_kmm.android.core.theme.darkColors
-import com.alainmk.translator_kmm.android.core.theme.lightColors
+import com.alainmk.translator_kmm.android.R
 
 @Composable
 fun TranslatorTheme(
