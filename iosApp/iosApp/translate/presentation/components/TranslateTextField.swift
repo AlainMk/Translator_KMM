@@ -24,7 +24,7 @@ struct TranslateTextField: View {
                 .gradientSurface()
                 .cornerRadius(15)
                 .animation(.easeInOut, value: isTranslating)
-                .shadow(radius: 4)
+                .shadow(color: .shadowColor, radius: 4)
         } else {
             TranslatedTextField(
                 fromText: fromText,
@@ -37,7 +37,7 @@ struct TranslateTextField: View {
             .gradientSurface()
             .cornerRadius(15)
             .animation(.easeInOut, value: isTranslating)
-            .shadow(radius: 4)
+            .shadow(color: .shadowColor, radius: 4)
             .onTapGesture {
                 onTranslateEvent(TranslateEvent.EditTranslation())
             }
@@ -77,6 +77,7 @@ private extension TranslateTextField {
                 )
                 .padding()
                 .foregroundColor(Color.onSurface)
+                .scrollContentBackground(Visibility.hidden)
                 .overlay(alignment: .bottomTrailing) {
                     ProgressButton(
                         text: "Translate",
@@ -86,9 +87,6 @@ private extension TranslateTextField {
                     }
                     .padding(.trailing)
                     .padding(.bottom)
-                }
-                .onAppear {
-                    UITextView.appearance().backgroundColor = .clear
                 }
         }
     }

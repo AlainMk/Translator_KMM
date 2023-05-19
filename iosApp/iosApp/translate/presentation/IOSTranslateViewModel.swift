@@ -21,7 +21,7 @@ extension TranslateScreen {
                toText: nil,
                isTranslating: false,
                fromLanguage: UiLanguage(language: .english, imageName: "english"),
-               toLanguage: UiLanguage(language: .german, imageName: "german"),
+               toLanguage: UiLanguage(language: .french, imageName: "french"),
                isChoosingFromLanguage: false,
                isChoosingToLanguage: false,
                error: nil,

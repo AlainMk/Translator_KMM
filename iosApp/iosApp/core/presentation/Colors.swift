@@ -34,6 +34,7 @@ extension Color {
     static let onBackground = Color(light: .textBlack, dark: .white)
     static let surface = Color(light: .white, dark: .darkGrey)
     static let onSurface = Color(light: .textBlack, dark: .white)
+    static let shadowColor = Color(light: Color(white: 0, opacity: 0.1), dark: Color(white: 0, opacity: 0.3))
 }
 
 private extension Color {

@@ -39,7 +39,7 @@ struct TranslateHistoryItem: View {
             .padding()
             .gradientSurface()
             .cornerRadius(15)
-            .shadow(radius: 4)
+            .shadow(color: .shadowColor, radius: 4)
         }
     }
 }
