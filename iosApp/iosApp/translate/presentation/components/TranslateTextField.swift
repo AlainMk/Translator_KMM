@@ -69,25 +69,38 @@ private extension TranslateTextField {
         let onTranslateEvent: (TranslateEvent) -> Void
         
         var body: some View {
-            TextEditor(text: $fromText)
-                .frame(
-                    maxWidth: .infinity,
-                    minHeight: 200,
-                    alignment: .topLeading
-                )
-                .padding()
-                .foregroundColor(Color.onSurface)
-                .scrollContentBackground(Visibility.hidden)
-                .overlay(alignment: .bottomTrailing) {
-                    ProgressButton(
-                        text: "Translate",
-                        isLoading: isTranslating
-                    ) {
-                        onTranslateEvent(TranslateEvent.Translate())
+            ZStack {
+                TextEditor(text: $fromText)
+                    .frame(
+                        maxWidth: .infinity,
+                        minHeight: 200,
+                        alignment: .topLeading
+                    )
+                    .padding()
+                    .foregroundColor(Color.onSurface)
+                    .scrollContentBackground(Visibility.hidden)
+                    .overlay(alignment: .bottomTrailing) {
+                        ProgressButton(
+                            text: "Translate",
+                            isLoading: isTranslating
+                        ) {
+                            onTranslateEvent(TranslateEvent.Translate())
+                        }
+                        .padding(.trailing)
+                        .padding(.bottom)
+                    }.overlay(alignment: .topLeading) {
+                        if fromText.isEmpty {
+                            Text("Enter a text to translate")
+                                .foregroundColor(Color(.placeholderText))
+                                .padding()
+                                .padding(.top, 8)
+                                .padding(.leading, 5)
+                        }
+                        
+                        
                     }
-                    .padding(.trailing)
-                    .padding(.bottom)
-                }
+            }
+            
         }
     }
     
