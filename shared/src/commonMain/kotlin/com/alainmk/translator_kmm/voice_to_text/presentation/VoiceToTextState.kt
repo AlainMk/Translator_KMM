@@ -3,7 +3,7 @@ package com.alainmk.translator_kmm.voice_to_text.presentation
 data class VoiceToTextState(
     val powerRatios: List<Float> = emptyList(),
     val spokenText: String = "",
-    val canRecord: Boolean = false,
+    val canRecord: Boolean = true,
     val recordError: String? = null,
     val displayState: DisplayState? = null
 )
