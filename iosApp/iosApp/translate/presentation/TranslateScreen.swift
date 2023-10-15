@@ -105,6 +105,10 @@ struct TranslateScreen: View {
         .onAppear {
             viewModel.startObserving()
         }
+        .refreshable {
+            
+                viewModel.startObserving()
+        }
         .onDisappear {
             viewModel.dispose()
         }
